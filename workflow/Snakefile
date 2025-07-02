@@ -1,0 +1,22 @@
+
+#ruleorder:  bcf_samps_and_filt_scatter > bcf_thin_scatter
+
+include: "rules/common.smk"
+
+
+localrules: get_genome 
+
+rule all:
+    input:
+        expand("results/fastq/{sample}.fastq",sample=sample_list),
+        expand("results/psmcfa/{sample}.psmcfa",sample=sample_list),
+        expand("results/bootstraps/{sample}/{sample}.{round}.psmc",
+                sample=sample_list, round=boot_round_list),
+        expand("results/plot_inputs/{sample}.0.txt",sample=sample_list),
+
+include: "rules/ref.smk"
+include: "rules/insnp2fastq.smk"
+include: "rules/bam2fastq.smk"
+include: "rules/fastq2psmcfa.smk"
+include: "rules/psmc.smk"
+

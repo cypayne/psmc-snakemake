@@ -1,0 +1,7 @@
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - psmc ==0.6.5
+  - gnuplot ==5.4.10

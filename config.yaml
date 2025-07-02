@@ -1,0 +1,32 @@
+#### PSMC for high-coverage samples (5X+)
+
+#### INPUT FILES ####
+
+# choose whether to start with bam or gvcf
+# gvcf: convert gvcf to fasta by swapping out variants in
+#       reference genome  
+# bam:  convert bam to fasta with angsd 
+input_type: gvcf 
+
+# tab-delimited input file matching sample name to path to gvcf or bam file
+# first column should be sample name, second column should be path
+# to corresponding gvcf or bam file (depending on input_type) 
+# sample_name\tpath_to_input
+input_file: "inputs/gvcfs.txt"
+
+# path to genome, only necessary if running gvcf option
+genome_path: "inputs/genome.fasta"
+
+# file with chromosome names, one per line
+# psmc will be run on these chromosomes
+chrom_subset_file: "inputs/chromosomes.txt"
+
+
+#### PARAMETERS ####
+
+# psmc parameters
+psmc:
+  intervals: "2+2+25*2+4+6"  # default: "4+25*2+4+6"
+  mutation_rate: 2e-09    # value for -u 
+  generation_time: 4      # value for -g  
+  num_bootstraps: 10     # specify number of bootstraps

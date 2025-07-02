@@ -94,7 +94,7 @@ chrom3
 ### PSMC parameters
 There are a few parameters that you should set for PSMC.
 
-The PSMC atomic time interval parameters you use is important, as using an inappropriate model can cause overfitting. See the [PSMC repo](https://github.com/lh3/psmc) for some information on this. The default is 4+25\*2+4+6, which works for humans, however it doesn't seem to work for many systems. [Hilgers et al (2025)](https://www.cell.com/current-biology/pdf/S0960-9822(24)01239-9.pdf) recommends splitting the first window to remove sharp false Ne peaks in recent time (ex. 2+2+25\*2+4+6 or 1+1+1+1+25\*2+4+6). 
+The PSMC atomic time interval parameters you use are important, as using inappropriate intervals can lead to overfitting. See the [PSMC repo](https://github.com/lh3/psmc) for some information on this. The default is 4+25\*2+4+6, which works for humans, however it doesn't seem to work for many systems. [Hilgers et al (2025)](https://www.cell.com/current-biology/pdf/S0960-9822(24)01239-9.pdf) recommends splitting the first window to remove sharp false Ne peaks in recent time (ex. 2+2+25\*2+4+6 or 1+1+1+1+25\*2+4+6). 
 
 Set the number of bootstraps to run for the bootstrapping step.
 
